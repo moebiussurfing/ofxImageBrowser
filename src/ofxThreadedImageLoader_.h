@@ -1,5 +1,6 @@
 #pragma once
 
+#include "ofMain.h" 
 #include <deque>
 #include "ofThread.h"
 #include "ofImage.h"

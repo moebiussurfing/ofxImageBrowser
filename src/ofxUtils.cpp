@@ -511,11 +511,11 @@ void fp::loadMipMapTexture( ofTexture& inTex, string imgPath, float inAnisotropy
 		texData.tex_u = (float)(pix.getHeight()) / (float)texData.tex_h;
 	}
 
-	ofSetPixelStorei(pix.getWidth(),pix.getBytesPerChannel(),pix.getNumChannels());
+	ofSetPixelStoreiAlignment(0, pix.getWidth(),pix.getBytesPerChannel(),pix.getNumChannels());
 
 	glGenTextures(1, &texData.textureID);
 	glBindTexture( texData.textureTarget, texData.textureID);
-	glTexImage2D( texData.textureTarget, 0, texData.glTypeInternal, pix.getWidth(), pix.getHeight(), 0, ofGetGlFormat(pix), ofGetGlType(pix), pix.getPixels());
+	glTexImage2D( texData.textureTarget, 0, texData.glInternalFormat, pix.getWidth(), pix.getHeight(), 0, ofGetGlFormat(pix), ofGetGlType(pix), pix.getPixels());
 	glHint(GL_GENERATE_MIPMAP_HINT, GL_NICEST);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 	glEnable(  texData.textureTarget);

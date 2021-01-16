@@ -3,7 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	I.allocate(100,100,OF_IMAGE_COLOR);
-	Browser.setDirectoryAndExtenstion("Images\\","png");
+	Browser.setDirectoryAndExtenstion("Images/","jpg");
+	//Browser.setDirectoryAndExtenstion(ofToDataPath("Images/"),"jpg");
 	ofRectangle BrowserRect(0,0,ofGetWidth()/2,ofGetHeight());
 	Browser.setDispRect(BrowserRect);
 	Browser.setOperable(true);
